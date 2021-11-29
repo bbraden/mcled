@@ -31,6 +31,9 @@ public final class main extends JavaPlugin {
             Thread.sleep(3000);
         } catch (InterruptedException | SerialPortException e) {
             e.printStackTrace();
+            System.out.println("----------");
+            System.out.println("port invalid or was unable to open, please try again or check your code.");
+            return;
         }
 
         state = true;
