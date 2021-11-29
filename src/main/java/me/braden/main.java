@@ -3,7 +3,7 @@ original code by:
 @bbraden on github
 braden#9999 on discord
 11/29/2021
- */
+*/
 package me.braden;
 
 import org.bukkit.*;
