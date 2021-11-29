@@ -1,9 +1,17 @@
 package me.braden;
 
+import jssc.SerialPort;
 import org.bukkit.inventory.Inventory;
 
+import java.util.Scanner;
+
 public class variables {
-    static String port = "COM5";
+
+    static Scanner obj = new Scanner(System.in);
+
+    static SerialPort com;
+
+    static String port;
     static boolean state;
     static boolean isDead;
     static String lookingAt;

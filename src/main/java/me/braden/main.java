@@ -15,10 +15,13 @@ import static me.braden.variables.*;
 
 public final class main extends JavaPlugin {
 
-    static SerialPort com = new SerialPort(port);
-
     @Override
     public void onEnable() {
+        System.out.println("[+] enter desired port: ");
+        port = obj.nextLine();
+
+        com = new SerialPort(port);
+
         try {
             com.openPort();
             Thread.sleep(1000);
@@ -47,7 +50,7 @@ public final class main extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new listeners(), this);
         Objects.requireNonNull(this.getCommand("led")).setExecutor(new commands());
-        new runnables.MyTask().runTaskTimer(this, 0, 20);
+        //new runnables.MyTask().runTaskTimer(this, 0, 20);
 
     }
 }
