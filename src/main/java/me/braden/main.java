@@ -23,7 +23,6 @@ public final class main extends JavaPlugin {
             com.openPort();
             Thread.sleep(1000);
             turnOff(com);
-
             Thread.sleep(2000);
             turnOn(com);
             Thread.sleep(1000);
@@ -32,7 +31,7 @@ public final class main extends JavaPlugin {
             System.out.println("[-] port active");
         } catch (InterruptedException | SerialPortException e) {
             e.printStackTrace();
-            System.out.println("----------\n[!] port invalid or was unable to open, please try again or check your code.");
+            System.out.println("=============\n[!] port invalid or was unable to open, please try again or check your code.");
             return;
         }
 

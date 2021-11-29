@@ -2,3 +2,6 @@ name: main
 version: '${project.version}'
 main: me.braden.main
 api-version: 1.17
+commands:
+  led:
+    description: led
