@@ -12,7 +12,7 @@ import static me.braden.variables.*;
 import static me.braden.methods.*;
 import static me.braden.main.*;
 
-public class Commands implements CommandExecutor {
+public class commands implements CommandExecutor {
 
     // This method is called, when somebody uses our command
     void notify(String noti) {

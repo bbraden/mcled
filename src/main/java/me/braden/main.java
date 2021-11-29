@@ -26,10 +26,18 @@ public final class main extends JavaPlugin {
             e.printStackTrace();
         }
 
-        state = power = walk = sight = click = brek = damage = death = respawn = true;
+        state = true;
+        power = true;
+        walk = true;
+        sight = true;
+        click = true;
+        brek = true;
+        damage = true;
+        death = true;
+        respawn = true;
 
         Bukkit.getPluginManager().registerEvents(new listeners(), this);
-        Objects.requireNonNull(this.getCommand("led")).setExecutor(new Commands());
+        Objects.requireNonNull(this.getCommand("led")).setExecutor(new commands());
         new runnables.MyTask().runTaskTimer(this, 0, 20);
 
     }
