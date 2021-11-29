@@ -29,7 +29,7 @@ public final class main extends JavaPlugin {
             Thread.sleep(1000);
             turnGreen(com);
             Thread.sleep(3000);
-            System.out.println("[-] port active ");
+            System.out.println("[-] port active");
         } catch (InterruptedException | SerialPortException e) {
             e.printStackTrace();
             System.out.println("----------\n[!] port invalid or was unable to open, please try again or check your code.");
