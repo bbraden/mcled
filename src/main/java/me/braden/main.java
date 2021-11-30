@@ -17,8 +17,10 @@ public final class main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        /*
         System.out.println("[+] enter desired port: ");
         port = obj.nextLine();
+        */
 
         com = new SerialPort(port);
 
