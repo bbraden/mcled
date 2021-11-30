@@ -40,12 +40,16 @@ public final class main extends JavaPlugin {
         try {
             com.openPort();
             Thread.sleep(1000);
-            turnOff(com);
-            Thread.sleep(2000);
             turnOn(com);
             Thread.sleep(1000);
+            turnRed(com);
+            Thread.sleep(500);
             turnGreen(com);
-            Thread.sleep(3000);
+            Thread.sleep(500);
+            turnBlue(com);
+            Thread.sleep(500);
+            turnGreen(com);
+            Thread.sleep(1000);
             System.out.println("[-] port active");
         } catch (InterruptedException | SerialPortException e) {
             e.printStackTrace();
