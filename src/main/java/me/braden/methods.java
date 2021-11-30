@@ -39,7 +39,7 @@ public class methods {
 
     public static void turnRed(SerialPort port) throws SerialPortException {
         port.writeByte(Byte.parseByte("72", 16));
-        Bukkit.getServer().broadcastMessage(ChatColor.DARK_GREEN + "[" + ChatColor.GREEN + "-" + ChatColor.DARK_GREEN + "]" + ChatColor.AQUA + " LED " + ChatColor.RED + "red");
+        Bukkit.getServer().broadcastMessage(ChatColor.DARK_GREEN + "[" + ChatColor.GREEN + "-" + ChatColor.DARK_GREEN + "]" + ChatColor.AQUA + " LED " + ChatColor.RED + "red"); //
     }
 
     public static void turnGreen(SerialPort port) throws SerialPortException {
