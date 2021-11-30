@@ -29,6 +29,12 @@ import static me.braden.methods.turnRed;
 import static me.braden.variables.*;
 
 public class listeners implements Listener {
+    private main plugin;
+
+    public listeners(main plugin) {
+        this.plugin = plugin;
+    }
+
     @EventHandler
     public void onInvClick(InventoryClickEvent e) throws SerialPortException {
         if (!e.getInventory().equals(gui)) {
@@ -102,7 +108,7 @@ public class listeners implements Listener {
                         }
                     }
                 }
-            }.runTaskTimer((Plugin) this, 0, 20);
+            }.runTaskTimer(plugin, 0, 20);
 
 
         }
@@ -130,7 +136,7 @@ public class listeners implements Listener {
                 Entity entity = e.getEntity();
                 if (entity instanceof Player) {
                     turnRed(com);
-                    new runnables.MyTask().runTaskTimer((Plugin) this, 0, 20);
+                    new runnables.MyTask().runTaskTimer(plugin, 0, 20);
                 }
             }
         }
