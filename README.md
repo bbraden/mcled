@@ -2,13 +2,13 @@
 A simple **minecraft** plugin that allows you to control
 **LED** **lights** with **arduino**.
 
-[`Demo Video`](https://www.youtube.com/watch?v=5oqp-Ey1aQA)
-
+[![Everything Is AWESOME](https://github.com/bbraden/mcled/blob/master/src/main/resources/screenshots/demo.gif?raw=true)](https://www.youtube.com/watch?v=5oqp-Ey1aQA "Demo Video")  
+**_(hint: click for full demo)_**
 # features
 
 - a custom GUI within minecraft  
 usage: `/led gui`
-![alt text](https://raw.githubusercontent.com/bbraden/mcled/master/src/main/resources/screenshots/gui1.png)
+  ![alt text](https://raw.githubusercontent.com/bbraden/mcled/master/src/main/resources/screenshots/gui1.png)
 
 
 - multiple toggleable options  
