@@ -17,10 +17,6 @@ public final class main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        /*
-        System.out.println("[+] enter desired port: ");
-        port = obj.nextLine();
-        */
 
         com = new SerialPort(port);
 
@@ -50,9 +46,8 @@ public final class main extends JavaPlugin {
         death = true;
         respawn = true;
 
-        Bukkit.getPluginManager().registerEvents(new listeners(), this);
+        Bukkit.getPluginManager().registerEvents(new listeners(this), this);
         Objects.requireNonNull(this.getCommand("led")).setExecutor(new commands());
-        //new runnables.MyTask().runTaskTimer(this, 0, 20);
 
     }
 }

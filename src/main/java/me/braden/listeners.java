@@ -184,31 +184,24 @@ public class listeners implements Listener {
                     if (block.getType() != Material.AIR | block.getType() != Material.CAVE_AIR) {
                         if (block.getType() == Material.WHITE_WOOL) {
                             turnWhite(com);
-                            //new MyTask().runTaskTimer(this, 0, 20);
                         }
                         if (block.getType() == Material.PURPLE_WOOL) {
                             turnPurple(com);
-                            //new MyTask().runTaskTimer(this, 0, 20);
                         }
                         if (block.getType() == Material.ORANGE_WOOL) {
                             turnOrange(com);
-                            //new MyTask().runTaskTimer(this, 0, 20);
                         }
                         if (block.getType() == Material.BLUE_WOOL) {
                             turnBlue(com);
-                            //new MyTask().runTaskTimer(this, 0, 20);
                         }
                         if (block.getType() == Material.GREEN_WOOL) {
                             turnGreen(com);
-                            //new MyTask().runTaskTimer(this, 0, 20);
                         }
                         if (block.getType() == Material.YELLOW_WOOL) {
                             turnYellow(com);
-                            //new MyTask().runTaskTimer(this, 0, 20);
                         }
                         if (block.getType() == Material.RED_WOOL) {
                             turnRed(com);
-                            //new MyTask().runTaskTimer(this, 0, 20);
                         }
                     }
                 }
@@ -231,31 +224,24 @@ public class listeners implements Listener {
                 if (e.getPlayer().getDisplayName().equalsIgnoreCase("vhs2")) {
                     if (block.getType() == Material.WHITE_WOOL) {
                         turnWhite(com);
-                        //new MyTask().runTaskTimer(this, 0, 20);
                     }
                     if (block.getType() == Material.PURPLE_WOOL) {
                         turnPurple(com);
-                        //new MyTask().runTaskTimer(this, 0, 20);
                     }
                     if (block.getType() == Material.ORANGE_WOOL) {
                         turnOrange(com);
-                        //new MyTask().runTaskTimer(this, 0, 20);
                     }
                     if (block.getType() == Material.BLUE_WOOL) {
                         turnBlue(com);
-                        //new MyTask().runTaskTimer(this, 0, 20);
                     }
                     if (block.getType() == Material.GREEN_WOOL) {
                         turnGreen(com);
-                        //new MyTask().runTaskTimer(this, 0, 20);
                     }
                     if (block.getType() == Material.YELLOW_WOOL) {
                         turnYellow(com);
-                        //new MyTask().runTaskTimer(this, 0, 20);
                     }
                     if (block.getType() == Material.RED_WOOL) {
                         turnRed(com);
-                        //new MyTask().runTaskTimer(this, 0, 20);
                     }
                 }
             }
