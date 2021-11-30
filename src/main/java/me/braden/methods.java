@@ -109,52 +109,53 @@ public class methods {
     public static String getEnvVariable(String envVariable) {
         return dotenv.get(envVariable);
     }
+
     public static String toHex(String arg) {
         return String.format("%040x", new BigInteger(1, arg.getBytes(/*YOUR_CHARSET?*/)));
     }
 
     public static void turnOn(SerialPort port) throws SerialPortException {
-        port.writeByte(Byte.parseByte("6f", 16));
+        port.writeByte(Byte.parseByte(toHex(getEnvVariable("on")), 16));
         Bukkit.getServer().broadcastMessage(ChatColor.DARK_GREEN + "[" + ChatColor.GREEN + "-" + ChatColor.DARK_GREEN + "]" + ChatColor.AQUA + " LED on");
     }
 
     public static void turnOff(SerialPort port) throws SerialPortException {
-        port.writeByte(Byte.parseByte("78", 16));
+        port.writeByte(Byte.parseByte(toHex(getEnvVariable("off")), 16));
         Bukkit.getServer().broadcastMessage(ChatColor.DARK_GREEN + "[" + ChatColor.GREEN + "-" + ChatColor.DARK_GREEN + "]" + ChatColor.AQUA + " LED off");
     }
 
     public static void turnRed(SerialPort port) throws SerialPortException {
-        port.writeByte(Byte.parseByte("72", 16));
+        port.writeByte(Byte.parseByte(toHex(getEnvVariable("red")), 16));
         Bukkit.getServer().broadcastMessage(ChatColor.DARK_GREEN + "[" + ChatColor.GREEN + "-" + ChatColor.DARK_GREEN + "]" + ChatColor.AQUA + " LED " + ChatColor.RED + "red"); //
     }
 
     public static void turnGreen(SerialPort port) throws SerialPortException {
-        port.writeByte(Byte.parseByte("67", 16));
+        port.writeByte(Byte.parseByte(toHex(getEnvVariable("green")), 16));
         Bukkit.getServer().broadcastMessage(ChatColor.DARK_GREEN + "[" + ChatColor.GREEN + "-" + ChatColor.DARK_GREEN + "]" + ChatColor.AQUA + " LED " + ChatColor.GREEN + "green");
     }
 
     public static void turnBlue(SerialPort port) throws SerialPortException {
-        port.writeByte(Byte.parseByte("62", 16));
+        port.writeByte(Byte.parseByte(toHex(getEnvVariable("blue")), 16));
         Bukkit.getServer().broadcastMessage(ChatColor.DARK_GREEN + "[" + ChatColor.GREEN + "-" + ChatColor.DARK_GREEN + "]" + ChatColor.AQUA + " LED " + ChatColor.BLUE + "blue");
     }
 
     public static void turnWhite(SerialPort port) throws SerialPortException {
-        port.writeByte(Byte.parseByte("77", 16));
+        port.writeByte(Byte.parseByte(toHex(getEnvVariable("white")), 16));
         Bukkit.getServer().broadcastMessage(ChatColor.DARK_GREEN + "[" + ChatColor.GREEN + "-" + ChatColor.DARK_GREEN + "]" + ChatColor.AQUA + " LED " + ChatColor.WHITE + "white");
     }
 
     public static void turnYellow(SerialPort port) throws SerialPortException {
-        port.writeByte(Byte.parseByte("79", 16));
+        port.writeByte(Byte.parseByte(toHex(getEnvVariable("yellow")), 16));
         Bukkit.getServer().broadcastMessage(ChatColor.DARK_GREEN + "[" + ChatColor.GREEN + "-" + ChatColor.DARK_GREEN + "]" + ChatColor.AQUA + " LED " + ChatColor.YELLOW + "yellow");
     }
 
     public static void turnOrange(SerialPort port) throws SerialPortException {
-        port.writeByte(Byte.parseByte("75", 16));
+        port.writeByte(Byte.parseByte(toHex(getEnvVariable("orange")), 16));
         Bukkit.getServer().broadcastMessage(ChatColor.DARK_GREEN + "[" + ChatColor.GREEN + "-" + ChatColor.DARK_GREEN + "]" + ChatColor.AQUA + " LED " + ChatColor.GOLD + "orange");
     }
 
     public static void turnPurple(SerialPort port) throws SerialPortException {
-        port.writeByte(Byte.parseByte("70", 16));
+        port.writeByte(Byte.parseByte(toHex(getEnvVariable("purple")), 16));
         Bukkit.getServer().broadcastMessage(ChatColor.DARK_GREEN + "[" + ChatColor.GREEN + "-" + ChatColor.DARK_GREEN + "]" + ChatColor.AQUA + " LED " + ChatColor.LIGHT_PURPLE + "purple");
     }
 }
