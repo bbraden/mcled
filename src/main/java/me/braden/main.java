@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 import static me.braden.methods.*;
 import static me.braden.variables.*;
-
+hi
 public final class main extends JavaPlugin {
 
     @Override
