@@ -40,16 +40,24 @@ public class listeners implements Listener {
 
         Player p = (Player) e.getWhoClicked();
 
-        if (e.getSlot() == 1) {
-            p.closeInventory();
+        if (e.getSlot() == 1 || e.getSlot() == 10 || e.getSlot() == 19) {
             turnRed(com);
-        } else if (e.getSlot() == 2) {
-            p.closeInventory();
+        } else if (e.getSlot() == 2 || e.getSlot() == 11 || e.getSlot() == 20) {
             turnGreen(com);
-        } else if (e.getSlot() == 3) {
-            p.closeInventory();
+        } else if (e.getSlot() == 3 || e.getSlot() == 12 || e.getSlot() == 21) {
             turnBlue(com);
+        } else if (e.getSlot() == 4 || e.getSlot() == 13 || e.getSlot() == 22) {
+            turnPurple(com);
+        } else if (e.getSlot() == 5 || e.getSlot() == 14 || e.getSlot() == 23) {
+            turnOrange(com);
+        } else if (e.getSlot() == 6 || e.getSlot() == 15 || e.getSlot() == 24) {
+            turnYellow(com);
+        } else if (e.getSlot() == 7 || e.getSlot() == 16 || e.getSlot() == 25) {
+            turnWhite(com);
+        } else if (e.getSlot() == 0 || e.getSlot() == 8 || e.getSlot() == 9 || e.getSlot() == 18 || e.getSlot() == 17 || e.getSlot() == 26) {
+            p.closeInventory();
         }
+
     }
 
     @EventHandler
