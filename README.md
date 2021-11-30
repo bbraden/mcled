@@ -6,7 +6,7 @@ A simple **minecraft** plugin that allows you to control
 **_(hint: click for full demo)_**
 # features
 
-- a custom GUI within minecraft  
+- a custom GUI within minecraft that serves a LED lights remote control   
 usage: `/led gui`
   ![alt text](https://raw.githubusercontent.com/bbraden/mcled/master/src/main/resources/screenshots/gui1.png)
 
