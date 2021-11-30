@@ -14,7 +14,6 @@ import static me.braden.main.*;
 
 public class commands implements CommandExecutor {
 
-    // This method is called, when somebody uses our command
     void notify(String noti) {
         Bukkit.getServer().broadcastMessage(ChatColor.DARK_GREEN + "[" + ChatColor.GREEN + "-" + ChatColor.DARK_GREEN + "] " + ChatColor.AQUA + noti + ChatColor.LIGHT_PURPLE + " switched");
     }

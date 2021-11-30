@@ -7,8 +7,6 @@ import java.util.Scanner;
 
 public class variables {
 
-    static Scanner obj = new Scanner(System.in);
-
     static SerialPort com;
 
     static String port = "COM5"; // replace com5 with port

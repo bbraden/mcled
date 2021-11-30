@@ -1,7 +1,6 @@
 package me.braden;
 
 import jssc.SerialPortException;
-import me.braden.runnables;
 import org.bukkit.FluidCollisionMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -18,18 +17,14 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
-
 import java.util.Objects;
-
-import static me.braden.main.*;
 import static me.braden.methods.*;
 import static me.braden.methods.turnRed;
 import static me.braden.variables.*;
 
 public class listeners implements Listener {
-    private main plugin;
+    private final main plugin;
 
     public listeners(main plugin) {
         this.plugin = plugin;
@@ -45,9 +40,15 @@ public class listeners implements Listener {
 
         Player p = (Player) e.getWhoClicked();
 
-        if (e.getSlot() == 2) {
+        if (e.getSlot() == 1) {
+            p.closeInventory();
+            turnRed(com);
+        } else if (e.getSlot() == 2) {
             p.closeInventory();
             turnGreen(com);
+        } else if (e.getSlot() == 3) {
+            p.closeInventory();
+            turnBlue(com);
         }
     }
 

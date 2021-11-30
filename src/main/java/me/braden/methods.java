@@ -15,13 +15,27 @@ public class methods {
     public static void openNewGui(Player p) {
         gui = Bukkit.createInventory(null, InventoryType.HOPPER);
 
-        ItemStack item = new ItemStack(Material.GREEN_CONCRETE, 1);
-        ItemMeta meta = item.getItemMeta();
-        assert meta != null;
-        meta.setDisplayName(ChatColor.GREEN + "green");
-        item.setItemMeta(meta);
+        ItemStack green = new ItemStack(Material.GREEN_CONCRETE, 1);
+        ItemMeta greenmeta = green.getItemMeta();
+        assert greenmeta != null;
+        greenmeta.setDisplayName(ChatColor.GREEN + "green");
+        green.setItemMeta(greenmeta);
 
-        gui.setItem(2, item);
+        ItemStack red = new ItemStack(Material.RED_CONCRETE, 1);
+        ItemMeta redmeta = red.getItemMeta();
+        assert redmeta != null;
+        redmeta.setDisplayName(ChatColor.GREEN + "red");
+        red.setItemMeta(redmeta);
+
+        ItemStack blue = new ItemStack(Material.BLUE_CONCRETE, 1);
+        ItemMeta bluemeta = blue.getItemMeta();
+        assert bluemeta != null;
+        bluemeta.setDisplayName(ChatColor.GREEN + "blue");
+        blue.setItemMeta(bluemeta);
+
+        gui.setItem(1, red);
+        gui.setItem(2, green);
+        gui.setItem(3, blue);
 
         p.openInventory(gui);
 

@@ -2,8 +2,6 @@ package me.braden;
 
 import jssc.SerialPortException;
 import org.bukkit.scheduler.BukkitRunnable;
-
-import static me.braden.main.*;
 import static me.braden.methods.turnBlue;
 import static me.braden.methods.turnGreen;
 import static me.braden.variables.*;
