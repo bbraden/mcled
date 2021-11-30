@@ -38,7 +38,14 @@ public final class main extends JavaPlugin {
         }
 
         try {
-            com.openPort();
+            try {
+                com.openPort();
+            } catch (SerialPortException e) {
+                com = new SerialPort(getEnvVariable("port"));
+                System.out.println("[-] Port Invalid, Changed To Port Listed In src/main/resources/.env At Line 2");
+                Thread.sleep(500);
+                com.openPort();
+            }
             Thread.sleep(1000);
             turnOn(com);
             Thread.sleep(1000);
