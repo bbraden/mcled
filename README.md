@@ -10,7 +10,7 @@ A simple **minecraft** plugin that allows you to control
 usage: `/led gui`
   ![alt text](https://raw.githubusercontent.com/bbraden/mcled/master/src/main/resources/screenshots/gui1.png)
 
-# **multiple toggleable options**
+## **multiple toggleable options**
 
 `walk`
 - using `/led walk` will toggle the walk feature on or off. This feature  
@@ -44,7 +44,7 @@ usage: `/led gui`
   is able to detect when the players respawns and uses that information to change  
   the color of the LED lights back to green after death.
 
-## Authors
+# Authors
 
 - [@braden](https://www.github.com/bbraden)
 - [discord server (for help)](https://discord.link/braden)
