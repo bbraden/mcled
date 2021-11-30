@@ -3,8 +3,6 @@ package me.braden;
 import jssc.SerialPort;
 import org.bukkit.inventory.Inventory;
 
-import java.util.Scanner;
-
 public class variables {
 
     static SerialPort com;
