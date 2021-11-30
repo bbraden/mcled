@@ -25,6 +25,7 @@ public final class main extends JavaPlugin {
 
         String userName = myObj.nextLine();  // Read user input
         System.out.println("[-] port: " + userName);  // Output user input
+        myObj.close();
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {

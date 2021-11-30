@@ -8,9 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import static me.braden.variables.*;
-
 import static me.braden.methods.*;
-import static me.braden.main.*;
 
 public class commands implements CommandExecutor {
 
@@ -88,11 +86,6 @@ public class commands implements CommandExecutor {
                 }
                 notify("off");
             }
-            //
-            //
-            // colors
-            //
-            //
             else if (args[0].equalsIgnoreCase("red")) {
                 try {
                     turnRed(com);
