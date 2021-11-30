@@ -10,6 +10,8 @@ import org.bukkit.*;
 import org.bukkit.plugin.java.JavaPlugin;
 import jssc.*;
 import java.util.Objects;
+import java.util.Scanner;
+
 import static me.braden.methods.*;
 import static me.braden.variables.*;
 
@@ -17,8 +19,23 @@ public final class main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        System.out.println("[!] If port dosent work the first time, put a space before the port [!]");
+        System.out.println("[+] input desired port");
 
-        com = new SerialPort(port);
+        String userName = myObj.nextLine();  // Read user input
+        System.out.println("[-] port: " + userName);  // Output user input
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        com = new SerialPort(userName);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         try {
             com.openPort();
