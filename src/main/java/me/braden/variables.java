@@ -1,10 +1,12 @@
 package me.braden;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import jssc.SerialPort;
 import org.bukkit.inventory.Inventory;
 
 public class variables {
 
+    static Dotenv dotenv = Dotenv.configure().load();
     static SerialPort com;
 
     static String port = "COM5"; // replace com5 with port

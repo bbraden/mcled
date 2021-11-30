@@ -9,6 +9,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import java.math.BigInteger;
+
 import static me.braden.variables.*;
 
 public class methods {
@@ -101,6 +104,13 @@ public class methods {
 
         p.openInventory(gui);
 
+    }
+
+    public static String getEnvVariable(String envVariable) {
+        return dotenv.get(envVariable);
+    }
+    public static String toHex(String arg) {
+        return String.format("%040x", new BigInteger(1, arg.getBytes(/*YOUR_CHARSET?*/)));
     }
 
     public static void turnOn(SerialPort port) throws SerialPortException {
