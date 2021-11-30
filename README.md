@@ -47,6 +47,4 @@ usage: `/led gui`
 ## Authors
 
 - [@braden](https://www.github.com/bbraden)
-
-
-message me on **discord** `braden#9999` for help
+- [discord server (for help)](https://discord.link/braden)
