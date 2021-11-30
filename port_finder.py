@@ -1,13 +1,11 @@
-import serial.tools.list_ports
-ports = serial.tools.list_ports.comports()
+from serial.tools.list_ports import comports
+ports = comports()
 
 finalMessage = ''
 
 for port, desc, hwid in sorted(ports):
-    message = "{}: {} [{}]".format(port, desc, hwid)
-    if 'Arduino' in message:
-        finalMessage = f'You will want to use "{port}" as your port.'
-    if 'arduino' in message:
-            finalMessage = f'You will want to use "{port}" as your port.'
-    print(message)
+    scan = "{}: {} [{}]".format(port, desc, hwid)
+    if 'Arduino' in scan:
+        finalMessage = f'[-] You will want to use "{port}" as your port.'
+    print(f'[+] {scan}')
 print(finalMessage)
