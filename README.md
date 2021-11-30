@@ -4,6 +4,21 @@ A simple **minecraft** plugin that allows you to control
 
 [`Demo Video`](https://www.youtube.com/watch?v=5oqp-Ey1aQA)
 
+# features
+
+- a custom GUI within minecraft  
+usage: `/led gui`
+![alt text](https://raw.githubusercontent.com/bbraden/mcled/master/src/main/resources/screenshots/gui1.png)
+
+
+- multiple toggleable options  
+usage:  
+  `/led walk` - enables or disables walk feature  
+  `/led sight` - enables or disables sight feature  
+  `/led click` - enables or disables click feature  
+  `/led damage` - enables or disables damage feature  
+  `/led death` - enables or disables death feature  
+  `/led respawn` - enables or disables respawn feature  
 # instructions
 necessary tools:
 
