@@ -11,7 +11,7 @@ public class variables {
 
     static SerialPort com;
 
-    static String port = "COM5";
+    static String port = "COM5"; // replace com5 with port
     static boolean state;
     static boolean isDead;
     static String lookingAt;
