@@ -2,6 +2,8 @@
 A simple **minecraft** plugin that allows you to control
 **LED** **lights** with **arduino**.
 
+['demo video'] (https://www.youtube.com/watch?v=5oqp-Ey1aQA)
+
 # instructions
 necessary tools:
 
