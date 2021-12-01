@@ -86,7 +86,7 @@ public final class main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new listeners(this), this);
         Objects.requireNonNull(this.getCommand("led")).setExecutor(new commands());
         BukkitScheduler scheduler = getServer().getScheduler();
-        scheduler.scheduleSyncDelayedTask(this, new Runnable() {
+        scheduler.scheduleSyncRepeatingTask(this, new Runnable() {
             @Override
             public void run() {
 
@@ -113,7 +113,6 @@ public final class main extends JavaPlugin {
                     }
                 }
             }
-        }, 10L);
-
+        }, 0L, 10L);
     }
 }
