@@ -86,54 +86,6 @@ public final class main extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new listeners(this), this);
         Objects.requireNonNull(this.getCommand("led")).setExecutor(new commands());
-        new BukkitRunnable() {
-            @Override
-            public void run() {
-                while (true){
-                    System.out.println("tried");
-                    if (Objects.equals(recentEntry, "red")) {
-                        try {
-                            turnRed(com);
-                        } catch (SerialPortException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            }
-        }.runTaskTimer(this, 0, 20);
-        System.out.println("working");
-        new BukkitRunnable() {
-            @Override
-            public void run() {
-                List<Document> inserts = new ArrayList<>();
-                ConnectionString connectionString = new ConnectionString("mongodb+srv://braden:1234@cluster0.w4snx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-                MongoClientSettings settings = MongoClientSettings.builder()
-                        .applyConnectionString(connectionString)
-                        .build();
-                MongoClient mongoClient = MongoClients.create(settings);
-                MongoDatabase database = mongoClient.getDatabase("chat");
-                MongoCollection<Document> collection = database.getCollection("chat");
-                FindIterable<Document> findIterable = collection.find(new Document());
-                Document myDoc = collection.find(eq("message", "no ur sus")).first();
-                String json = myDoc.toJson();
-                FindIterable<Document> iterDoc = collection.find();
-                while (true) {
-                    for (Document document : iterDoc) {
-                        if (document == null) {
-                            return;
-                        } else {
-                            if (!inserts.contains(document)) {
-                                inserts.add(document);
-                                System.out.println(document.get("message").toString());
-                                recentEntry = document.get("message").toString();
-                            }
-                        }
-
-
-                    }
-                }
-            }
-        }.runTaskTimer(this, 20, 0);
 
     }
 }
