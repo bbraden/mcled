@@ -10,6 +10,7 @@ import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.client.*;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 import org.bukkit.*;
 import org.bukkit.plugin.java.JavaPlugin;
 import jssc.*;
@@ -27,6 +28,7 @@ public final class main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        /*
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("[!] If port dosent work the first time, put a space before the port [!]");
         System.out.println("[+] input desired port");
@@ -70,9 +72,8 @@ public final class main extends JavaPlugin {
         } catch (InterruptedException | SerialPortException e) {
             e.printStackTrace();
             System.out.println("=============\n[!] port invalid or was unable to open, please try again or check your code.");
-            return;
         }
-
+        */
         state = true;
         power = true;
         walk = true;
@@ -85,34 +86,60 @@ public final class main extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new listeners(this), this);
         Objects.requireNonNull(this.getCommand("led")).setExecutor(new commands());
+        /*
         BukkitScheduler scheduler = getServer().getScheduler();
         scheduler.scheduleSyncRepeatingTask(this, new Runnable() {
+            final ConnectionString connectionString = new ConnectionString("mongodb+srv://braden:1234@cluster0.w4snx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+            final MongoClientSettings settings = MongoClientSettings.builder()
+                    .applyConnectionString(connectionString)
+                    .build();
+            final MongoClient mongoClient = MongoClients.create(settings);
+            final MongoDatabase database = mongoClient.getDatabase("chat");
+            final MongoCollection<Document> collection = database.getCollection("chat");
+            final ArrayList<Document> inserts = new ArrayList<>();
+            final FindIterable<Document> iterDoc = collection.find();
             @Override
             public void run() {
-
-                ConnectionString connectionString = new ConnectionString("mongodb+srv://braden:1234@cluster0.w4snx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-                MongoClientSettings settings = MongoClientSettings.builder()
-                        .applyConnectionString(connectionString)
-                        .build();
-                MongoClient mongoClient = MongoClients.create(settings);
-                MongoDatabase database = mongoClient.getDatabase("chat");
-                MongoCollection<Document> collection = database.getCollection("chat");
-                ArrayList<Document> inserts = new ArrayList<>();
-                FindIterable<Document> iterDoc = collection.find();
-                while (true) {
-                    for (Document document : iterDoc) {
-                        if (document == null) {
-                            return;
-                        } else {
-                            if (!inserts.contains(document)) {
-                                inserts.add(document);
-                                System.out.println(document.get("message").toString());
-                                entry = document.get("message").toString();
+                for (Document document : iterDoc) {
+                    if (document == null) {
+                        return;
+                    } else {
+                        if (!inserts.contains(document)) {
+                            inserts.add(document);
+                            System.out.println(document.get("message").toString());
+                            entry = document.get("message").toString();
+                            if (Objects.equals(entry, "red")) {
+                                System.out.println("red activated");
                             }
                         }
                     }
                 }
             }
-        }, 0L, 10L);
+        }, 0L, 3L);
+         */
+        /*
+        BukkitScheduler scheduler = getServer().getScheduler();
+        scheduler.scheduleSyncRepeatingTask(this, new Runnable() {
+            private int count = 0;
+            final ConnectionString connectionString = new ConnectionString("mongodb+srv://braden:1234@cluster0.w4snx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+            final MongoClientSettings settings = MongoClientSettings.builder()
+                    .applyConnectionString(connectionString)
+                    .build();
+            final MongoClient mongoClient = MongoClients.create(settings);
+            final MongoDatabase database = mongoClient.getDatabase("chat");
+            final MongoCollection<Document> collection = database.getCollection("chat");
+            final ArrayList<Document> inserts = new ArrayList<>();
+            final FindIterable<Document> iterDoc = collection.find();
+            @Override
+            public void run() {
+                count += 1;
+                collection.insertOne(new Document()
+                        .append("_id", new ObjectId())
+                        .append("message", ("red " + count)));
+                System.out.println("red sent");
+                }
+
+        }, 0L, 40L);
+        */
     }
 }
