@@ -1,4 +1,4 @@
-package me.braden;
+package me.main;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import jssc.SerialPort;
@@ -9,11 +9,15 @@ public class variables {
     static Dotenv dotenv = Dotenv.configure().load();
     static SerialPort com;
 
+    static String entry;
+
     //static String recentEntry;
     static String port = methods.getEnvVariable("port"); // replace com5 with port
     static boolean state;
     static boolean isDead;
     static String lookingAt;
+
+    static String recentEntry;
 
     static boolean power;
 

@@ -1,4 +1,4 @@
-package me.braden;
+package me.main;
 
 import jssc.SerialPortException;
 import org.bukkit.FluidCollisionMode;
@@ -19,9 +19,9 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.scheduler.BukkitRunnable;
 import java.util.Objects;
-import static me.braden.methods.*;
-import static me.braden.methods.turnRed;
-import static me.braden.variables.*;
+import static me.main.methods.*;
+import static me.main.methods.turnRed;
+import static me.main.variables.*;
 
 public class listeners implements Listener {
     private final main plugin;

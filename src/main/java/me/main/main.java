@@ -4,7 +4,7 @@ original code by:
 braden#9999 on discord
 11/29/2021
 */
-package me.braden;
+package me.main;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
@@ -13,16 +13,15 @@ import org.bson.Document;
 import org.bukkit.*;
 import org.bukkit.plugin.java.JavaPlugin;
 import jssc.*;
-import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scheduler.BukkitScheduler;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
 import static com.mongodb.client.model.Filters.eq;
-import static me.braden.methods.*;
-import static me.braden.variables.*;
+import static me.main.methods.*;
+import static me.main.variables.*;
 
 public final class main extends JavaPlugin {
 
@@ -86,6 +85,35 @@ public final class main extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new listeners(this), this);
         Objects.requireNonNull(this.getCommand("led")).setExecutor(new commands());
+        BukkitScheduler scheduler = getServer().getScheduler();
+        scheduler.scheduleSyncDelayedTask(this, new Runnable() {
+            @Override
+            public void run() {
+
+                ConnectionString connectionString = new ConnectionString("mongodb+srv://braden:1234@cluster0.w4snx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+                MongoClientSettings settings = MongoClientSettings.builder()
+                        .applyConnectionString(connectionString)
+                        .build();
+                MongoClient mongoClient = MongoClients.create(settings);
+                MongoDatabase database = mongoClient.getDatabase("chat");
+                MongoCollection<Document> collection = database.getCollection("chat");
+                ArrayList<Document> inserts = new ArrayList<>();
+                FindIterable<Document> iterDoc = collection.find();
+                while (true) {
+                    for (Document document : iterDoc) {
+                        if (document == null) {
+                            return;
+                        } else {
+                            if (!inserts.contains(document)) {
+                                inserts.add(document);
+                                System.out.println(document.get("message").toString());
+                                entry = document.get("message").toString();
+                            }
+                        }
+                    }
+                }
+            }
+        }, 10L);
 
     }
 }

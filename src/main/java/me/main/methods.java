@@ -1,4 +1,4 @@
-package me.braden;
+package me.main;
 
 import jssc.SerialPort;
 import jssc.SerialPortException;
@@ -12,7 +12,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.math.BigInteger;
 
-import static me.braden.variables.*;
+import static me.main.variables.*;
 
 public class methods {
     public static void openNewGui(Player p) {
